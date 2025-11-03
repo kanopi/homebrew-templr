@@ -9,32 +9,33 @@ cask "templr" do
     skip "Auto-generated on release."
   end
 
-  binary "templr"
-
+  # macOS
   on_macos do
-    on_intel do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-amd64",
+    arch arm: "arm64", intel: "amd64"
+
+    sha256 arm:   "5fafb5fe639889b19f8a53941df4eb123803e3032cdca7495f995c4ae1f27132",
+           intel: "d5fd063326594ba543c577b4d17155cb3e4493da9cb3ca8a90adc29abe7260df"
+
+    url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-#{arch}",
         verified: "github.com/kanopi/templr/"
-      sha256 "d5fd063326594ba543c577b4d17155cb3e4493da9cb3ca8a90adc29abe7260df"
-    end
-    on_arm do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-arm64",
-        verified: "github.com/kanopi/templr/"
-      sha256 "5fafb5fe639889b19f8a53941df4eb123803e3032cdca7495f995c4ae1f27132"
-    end
+
+    # Downloaded file is "templr-darwin-#{arch}" — link it as "templr"
+    binary "templr-darwin-#{arch}", target: "templr"
+
+    depends_on macos: ">= :big_sur"
   end
 
+  # Linux (for Linuxbrew users)
   on_linux do
-    on_intel do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-amd64",
+    arch arm: "arm64", intel: "amd64"
+
+    sha256 arm:   "8c0062f49eadc9297aa741204bc87cd27c82b1fdf51c9d6af8e1a2bb95f220fb",
+           intel: "a7e7c45df36d271453abc09fca7f285401722aff72b5573575eb2e2a136ad0d9"
+
+    url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-#{arch}",
         verified: "github.com/kanopi/templr/"
-      sha256 "a7e7c45df36d271453abc09fca7f285401722aff72b5573575eb2e2a136ad0d9"
-    end
-    on_arm do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-arm64",
-        verified: "github.com/kanopi/templr/"
-      sha256 "8c0062f49eadc9297aa741204bc87cd27c82b1fdf51c9d6af8e1a2bb95f220fb"
-    end
+
+    binary "templr-linux-#{arch}", target: "templr"
   end
 
   # No zap stanza required
