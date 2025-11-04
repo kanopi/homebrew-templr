@@ -9,33 +9,32 @@ cask "templr" do
     skip "Auto-generated on release."
   end
 
-  # macOS
+  binary "templr"
+
   on_macos do
-    arch arm: "arm64", intel: "amd64"
-
-    sha256 arm:   "5fafb5fe639889b19f8a53941df4eb123803e3032cdca7495f995c4ae1f27132",
-           intel: "d5fd063326594ba543c577b4d17155cb3e4493da9cb3ca8a90adc29abe7260df"
-
-    url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-#{arch}",
+    on_intel do
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_darwin_amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-
-    # Downloaded file is "templr-darwin-#{arch}" — link it as "templr"
-    binary "templr-darwin-#{arch}", target: "templr"
-
-    depends_on macos: ">= :big_sur"
+      sha256 "8a53d0e977d6fdad835348c7f22c465b6f0efbc050fd67e7d2b4a111857999ce"
+    end
+    on_arm do
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_darwin_arm64.tar.gz",
+        verified: "github.com/kanopi/templr/"
+      sha256 "f326e28d8b971331b4e83e057fcb6ec00715e6c62db9e503117d533f140ecc3f"
+    end
   end
 
-  # Linux (for Linuxbrew users)
   on_linux do
-    arch arm: "arm64", intel: "amd64"
-
-    sha256 arm:   "8c0062f49eadc9297aa741204bc87cd27c82b1fdf51c9d6af8e1a2bb95f220fb",
-           intel: "a7e7c45df36d271453abc09fca7f285401722aff72b5573575eb2e2a136ad0d9"
-
-    url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-#{arch}",
+    on_intel do
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_linux_amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-
-    binary "templr-linux-#{arch}", target: "templr"
+      sha256 "c1edf40095347a5f9433a34ed2ecfc202fd7d9d400b8897cfcf71142a8f64c6a"
+    end
+    on_arm do
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_linux_arm64.tar.gz",
+        verified: "github.com/kanopi/templr/"
+      sha256 "c00e95dc509377461efce519a3b6257966d59369075b84ce649ded3b91ae4909"
+    end
   end
 
   # No zap stanza required
