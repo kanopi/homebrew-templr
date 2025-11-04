@@ -15,12 +15,12 @@ cask "templr" do
     on_intel do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "6de18310484f5ef7640d2013462942dc811e6f3a29be53938ea3a53b0ee49e41"
+      sha256 "7ff19d9d2dcc54aa6e5242d8edc8b7e9ac4b73c4021cbb70c71e8259aa1ff9f1"
     end
     on_arm do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "818385eb589fb4b83f2348f8de9bb57910a8bf717be3fe4b2662b44a53850e1a"
+      sha256 "6c9cd90e1325392fc498c28d28542a31aaccbfc69c2d661387c66a5f5ce5a236"
     end
   end
 
@@ -28,12 +28,18 @@ cask "templr" do
     on_intel do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "180098f4675de0cda29ed063b1628c6900b1f864a9e086ee5158983f31f8ffe1"
+      sha256 "ef1f6dd9261ac1eb1a057fa6f5161bfe22493cc7a9515116cd151c1adeacd82a"
     end
     on_arm do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "7badce0fdce9aa2d28443cc352f5e03f4a7a9962c1ff5622456e36a4a127db8e"
+      sha256 "86cd6872fd99a892745165779c3175b30eb520d52a742a0a9b5fe016f35085fe"
+    end
+  end
+
+  postflight do
+    if OS.mac?
+      system_command "/usr/bin/xattr", args: ["-dr", "com.apple.quarantine", "#{staged_path}/templr"]
     end
   end
 
