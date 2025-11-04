@@ -13,27 +13,27 @@ cask "templr" do
 
   on_macos do
     on_intel do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_darwin_amd64.tar.gz",
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "8a53d0e977d6fdad835348c7f22c465b6f0efbc050fd67e7d2b4a111857999ce"
+      sha256 "6de18310484f5ef7640d2013462942dc811e6f3a29be53938ea3a53b0ee49e41"
     end
     on_arm do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_darwin_arm64.tar.gz",
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "f326e28d8b971331b4e83e057fcb6ec00715e6c62db9e503117d533f140ecc3f"
+      sha256 "818385eb589fb4b83f2348f8de9bb57910a8bf717be3fe4b2662b44a53850e1a"
     end
   end
 
   on_linux do
     on_intel do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_linux_amd64.tar.gz",
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "c1edf40095347a5f9433a34ed2ecfc202fd7d9d400b8897cfcf71142a8f64c6a"
+      sha256 "180098f4675de0cda29ed063b1628c6900b1f864a9e086ee5158983f31f8ffe1"
     end
     on_arm do
-      url "https://github.com/kanopi/templr/releases/download/#{version}/templr_#{version}_linux_arm64.tar.gz",
+      url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "c00e95dc509377461efce519a3b6257966d59369075b84ce649ded3b91ae4909"
+      sha256 "7badce0fdce9aa2d28443cc352f5e03f4a7a9962c1ff5622456e36a4a127db8e"
     end
   end
 
