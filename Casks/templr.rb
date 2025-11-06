@@ -3,7 +3,7 @@ cask "templr" do
   name "templr"
   desc "A powerful Go template rendering CLI tool with Sprig functions"
   homepage "https://github.com/kanopi/templr"
-  version "1.1.0"
+  version "1.2.0"
 
   livecheck do
     skip "Auto-generated on release."
@@ -15,12 +15,12 @@ cask "templr" do
     on_intel do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "7ff19d9d2dcc54aa6e5242d8edc8b7e9ac4b73c4021cbb70c71e8259aa1ff9f1"
+      sha256 "f4355d657551933cbb31abb68ced7229a2d944bad1c1d51a6eb3d7f224a0d76d"
     end
     on_arm do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-darwin-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "6c9cd90e1325392fc498c28d28542a31aaccbfc69c2d661387c66a5f5ce5a236"
+      sha256 "8bb7286d328f1aa16162355faf78686cecd4362b6eac82e06ab74aaf05a6bee2"
     end
   end
 
@@ -28,12 +28,12 @@ cask "templr" do
     on_intel do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-amd64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "ef1f6dd9261ac1eb1a057fa6f5161bfe22493cc7a9515116cd151c1adeacd82a"
+      sha256 "236f7796b851cab1095356e4af87114cb1c4836fdd8c900173a3cd2b2a45b793"
     end
     on_arm do
       url "https://github.com/kanopi/templr/releases/download/#{version}/templr-linux-arm64.tar.gz",
         verified: "github.com/kanopi/templr/"
-      sha256 "86cd6872fd99a892745165779c3175b30eb520d52a742a0a9b5fe016f35085fe"
+      sha256 "bd2f2b9eb35c44898fc2403e3c28ba9363fdd06bd8a7ebcdd9f92a387aea827b"
     end
   end
 
